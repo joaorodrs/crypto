@@ -1,4 +1,5 @@
 import { useState } from "react"
+import firebase from 'firebase/app'
 import { BiMenu, BiBitcoin, BiUser, BiLogOut } from "react-icons/bi"
 import { AiFillGithub } from 'react-icons/ai'
 import { Drawer } from "../components/Drawer"
@@ -8,7 +9,11 @@ import styles from '../styles/pages/Home.module.css'
 import cryptoImg from '../assets/crypto.png'
 import { Main } from "../components/Main"
 
-export const Home = () => {
+interface HomeProps {
+  auth: firebase.auth.Auth
+}
+
+export const Home = ({ auth }: HomeProps) => {
   const [showDrawer, setShowDrawer] = useState(false)
   const [activeComponent, setActiveComponent] = useState('Início')
 
@@ -22,7 +27,11 @@ export const Home = () => {
     <div
       className={styles.homeContainer}
     >
-      <Drawer showDrawer={showDrawer} onChangeComponent={toggleComponent} />
+      <Drawer
+        showDrawer={showDrawer}
+        onChangeComponent={toggleComponent}
+        auth={auth}
+      />
       <header
         className={styles.header}
         style={{
@@ -71,7 +80,7 @@ export const Home = () => {
           </button>
           <button
             className={styles.drawerItem}
-            onClick={() => alert('Logged out')}
+            onClick={() => auth.signOut()}
           >
             <BiLogOut size={25} color="#f44" />
           </button>

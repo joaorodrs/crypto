@@ -1,3 +1,4 @@
+import firebase from 'firebase/app'
 import { BiBitcoin, BiLogOut, BiUser } from 'react-icons/bi'
 import styles from '../styles/components/Drawer.module.css'
 
@@ -5,10 +6,11 @@ import cryptoImg from '../assets/crypto.png'
 
 interface DrawerProps {
   showDrawer: boolean,
-  onChangeComponent: (componentName: string) => void
+  onChangeComponent: (componentName: string) => void,
+  auth: firebase.auth.Auth
 }
 
-export const Drawer = ({ showDrawer, onChangeComponent }: DrawerProps) => {
+export const Drawer = ({ showDrawer, onChangeComponent, auth }: DrawerProps) => {
   return (
     <aside
       className={styles.drawerContainer}
@@ -38,7 +40,7 @@ export const Drawer = ({ showDrawer, onChangeComponent }: DrawerProps) => {
       </button>
       <button
         className={styles.drawerItem}
-        onClick={() => alert('Logged out')}
+        onClick={() => auth.signOut()}
       >
         <BiLogOut size={25} color="gray" />
         Sair
