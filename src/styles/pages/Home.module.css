@@ -67,7 +67,7 @@
     width: 100%;
   }
 
-  .header nav a {
+  .header nav button {
     display: flex;
     align-items: center;
     transition: opacity 0.3s;
@@ -77,15 +77,15 @@
     border-radius: 8px;
   }
 
-  .header nav a:hover {
+  .header nav button:hover {
     opacity: 0.7;
   }
 
-  .header nav a svg {
+  .header nav button svg {
     margin-right: 5px;
   }
 
-  .header nav a:last-child {
+  .header nav button:last-child {
     margin-left: auto;
   }
 

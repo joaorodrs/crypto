@@ -22,27 +22,27 @@ export const Drawer = ({ showDrawer, onChangeComponent }: DrawerProps) => {
           alt="Crypto"
         />
       </div>
-      <a
+      <button
         className={styles.drawerItem}
         onClick={() => onChangeComponent('Início')}
       >
         <BiBitcoin size={25} color="gray" />
         Início
-      </a>
-      <a
+      </button>
+      <button
         className={styles.drawerItem}
         onClick={() => onChangeComponent('Perfil')}
       >
         <BiUser size={25} color="gray" />
         Perfil
-      </a>
-      <a
+      </button>
+      <button
         className={styles.drawerItem}
         onClick={() => alert('Logged out')}
       >
         <BiLogOut size={25} color="gray" />
         Sair
-      </a>
+      </button>
     </aside>
   )
 }

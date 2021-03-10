@@ -42,7 +42,7 @@ export const Home = () => {
         </div>
         <h2>{activeComponent}</h2>
         <nav>
-          <a
+          <button
             className={styles.drawerItem}
             onClick={() => toggleComponent('Início')}
             style={{
@@ -54,8 +54,8 @@ export const Home = () => {
               color={activeComponent === 'Início' ? "#657bf9" : 'gray'}
             />
             <h3>Início</h3>
-          </a>
-          <a
+          </button>
+          <button
             className={styles.drawerItem}
             onClick={() => toggleComponent('Perfil')}
             style={{
@@ -67,17 +67,18 @@ export const Home = () => {
               color={activeComponent === 'Perfil' ? "#657bf9" : 'gray'}
             />
             <h3>Perfil</h3>
-          </a>
-          <a
+          </button>
+          <button
             className={styles.drawerItem}
             onClick={() => alert('Logged out')}
           >
             <BiLogOut size={25} color="#f44" />
-          </a>
+          </button>
         </nav>
         <a
           href="https://github.com/joaorodrs/crypto"
           target="_blank"
+          rel="noreferrer"
           className={styles.gitHubButton}
         >
           <AiFillGithub
