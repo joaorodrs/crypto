@@ -1,9 +1,11 @@
 import { useState } from "react"
-import { BiMenu } from "react-icons/bi"
+import { BiMenu, BiBitcoin, BiUser, BiLogOut } from "react-icons/bi"
 import { AiFillGithub } from 'react-icons/ai'
 import { Drawer } from "../components/Drawer"
 
 import styles from '../styles/pages/Home.module.css'
+
+import cryptoImg from '../assets/crypto.png'
 
 export const Home = () => {
   const [showDrawer, setShowDrawer] = useState(false)
@@ -32,7 +34,47 @@ export const Home = () => {
         >
           <BiMenu size={35} />
         </button>
+        <div className={styles.logoWrapper}>
+          <img
+            src={cryptoImg}
+            alt="Crypto"
+          />
+        </div>
         <h2>{activeComponent}</h2>
+        <nav>
+          <a
+            className={styles.drawerItem}
+            onClick={() => toggleComponent('Início')}
+            style={{
+              background: activeComponent === 'Início' ? "#657bf936" : 'white'
+            }}
+          >
+            <BiBitcoin
+              size={25}
+              color={activeComponent === 'Início' ? "#657bf9" : 'gray'}
+            />
+            <h3>Início</h3>
+          </a>
+          <a
+            className={styles.drawerItem}
+            onClick={() => toggleComponent('Perfil')}
+            style={{
+              background: activeComponent === 'Perfil' ? "#657bf936" : 'white'
+            }}
+          >
+            <BiUser
+              size={25}
+              color={activeComponent === 'Perfil' ? "#657bf9" : 'gray'}
+            />
+            <h3>Perfil</h3>
+          </a>
+          <a
+            className={styles.drawerItem}
+            onClick={() => alert('Logged out')}
+          >
+            <BiLogOut size={25} color="#f44" />
+          </a>
+        </nav>
         <a
           href="https://github.com/joaorodrs/crypto"
           target="_blank"
@@ -51,7 +93,7 @@ export const Home = () => {
           background: showDrawer ? '#ddd' : 'white'
         }}
       >
-        Something in the body
+        {activeComponent}
       </main>
     </div>
   )
