@@ -6,6 +6,7 @@ import { Drawer } from "../components/Drawer"
 import styles from '../styles/pages/Home.module.css'
 
 import cryptoImg from '../assets/crypto.png'
+import { Main } from "../components/Main"
 
 export const Home = () => {
   const [showDrawer, setShowDrawer] = useState(false)
@@ -94,7 +95,7 @@ export const Home = () => {
           background: showDrawer ? '#ddd' : 'white'
         }}
       >
-        {activeComponent}
+        {activeComponent === 'Início' && <Main />}
       </main>
     </div>
   )

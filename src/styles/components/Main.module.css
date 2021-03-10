@@ -1,0 +1,14 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 15px 20px;
+}
+
+.pinnedCoins {
+  background: #657bf936;
+  height: 175px;
+  width: 100%;
+  border-radius: 10px;
+}
