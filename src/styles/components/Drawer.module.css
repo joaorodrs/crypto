@@ -1,0 +1,12 @@
+.nav {
+  background: red;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  transition: 0.3s ease;
+  overflow-x: hidden;
+}
+
+.navItem {
+  background: yellow;
+}
