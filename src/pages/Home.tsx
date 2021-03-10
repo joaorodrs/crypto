@@ -8,6 +8,7 @@ import styles from '../styles/pages/Home.module.css'
 
 import cryptoImg from '../assets/crypto.png'
 import { Main } from "../components/Main"
+import { Profile } from "../components/Profile"
 
 interface HomeProps {
   auth: firebase.auth.Auth
@@ -105,6 +106,7 @@ export const Home = ({ auth }: HomeProps) => {
         }}
       >
         {activeComponent === 'Início' && <Main />}
+        {activeComponent === 'Perfil' && <Profile userInfo={auth.currentUser} />}
       </main>
     </div>
   )

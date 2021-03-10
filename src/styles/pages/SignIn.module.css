@@ -23,6 +23,7 @@
   flex-direction: column;
   align-items: center;
   width: 60%;
+  max-width: 300px;
 }
 
 .signInMethodButton {
@@ -37,6 +38,7 @@
   font-weight: 600;
   color: #657bf9;
   transition: opacity 0.3s;
+  cursor: pointer;
 }
 
 .signInMethodButton:last-child {

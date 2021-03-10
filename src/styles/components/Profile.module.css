@@ -1,0 +1,28 @@
+.profileContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.profileContainer img {
+  border-radius: 50%;
+  width: 70px;
+}
+
+.userInfoWrapper {
+  margin-left: 10px;
+}
+
+.userInfoWrapper h3 {
+  font-size: 18px;
+}
+
+.userData {}
+
+@media (min-width: 800px) {
+  .profileContainer {
+    justify-content: start;
+    margin-left: 20px;
+  }
+}
