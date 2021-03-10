@@ -1,23 +1,33 @@
-import { useState } from 'react'
-import { BiBitcoin } from 'react-icons/bi'
+import { BiBitcoin, BiUser } from 'react-icons/bi'
 import styles from '../styles/components/Drawer.module.css'
 
 interface DrawerProps {
-  showDrawer: boolean
+  showDrawer: boolean,
+  onChangeComponent: (componentName: string) => void
 }
 
-export const Drawer = ({ showDrawer }: DrawerProps) => {
+export const Drawer = ({ showDrawer, onChangeComponent }: DrawerProps) => {
   return (
-    <nav
-      className={styles.nav}
+    <aside
+      className={styles.drawerContainer}
       style={{
-        maxWidth: showDrawer ? '50%' : 0
+        marginLeft: !showDrawer ? '-50%' : 0
       }}
     >
-      <a href="" className={styles.navItem}>
+      <a
+        className={styles.drawerItem}
+        onClick={() => onChangeComponent('Início')}
+      >
         <BiBitcoin size={25} color="gray" />
         Início
       </a>
-    </nav>
+      <a
+        className={styles.drawerItem}
+        onClick={() => onChangeComponent('Perfil')}
+      >
+        <BiUser size={25} color="gray" />
+        Perfil
+      </a>
+    </aside>
   )
 }

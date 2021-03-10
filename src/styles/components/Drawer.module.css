@@ -1,12 +1,14 @@
-.nav {
+.drawerContainer {
   background: red;
   display: flex;
   flex-direction: column;
   width: 50%;
   transition: 0.3s ease;
-  overflow-x: hidden;
+  position: absolute;
+  height: 100vh;
+  z-index: 3;
 }
 
-.navItem {
+.drawerItem {
   background: yellow;
 }
