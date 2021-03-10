@@ -13,12 +13,10 @@ interface SignInProps {
 }
 
 export const SignIn = ({ auth }: SignInProps) => {
-  const [user] = useAuthState(auth)
-
-  async function handleSignInWithGoogle() {
+  function handleSignInWithGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider()
 
-    await auth.signInWithPopup(provider)
+    auth.signInWithPopup(provider)
   }
 
   function handleSignInWithFacebook() {
