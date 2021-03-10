@@ -1,5 +1,7 @@
-import { BiBitcoin, BiUser } from 'react-icons/bi'
+import { BiBitcoin, BiLogOut, BiUser } from 'react-icons/bi'
 import styles from '../styles/components/Drawer.module.css'
+
+import cryptoImg from '../assets/crypto.png'
 
 interface DrawerProps {
   showDrawer: boolean,
@@ -14,6 +16,12 @@ export const Drawer = ({ showDrawer, onChangeComponent }: DrawerProps) => {
         marginLeft: !showDrawer ? '-50%' : 0
       }}
     >
+      <div className={styles.logoWrapper}>
+        <img
+          src={cryptoImg}
+          alt="Crypto"
+        />
+      </div>
       <a
         className={styles.drawerItem}
         onClick={() => onChangeComponent('Início')}
@@ -27,6 +35,13 @@ export const Drawer = ({ showDrawer, onChangeComponent }: DrawerProps) => {
       >
         <BiUser size={25} color="gray" />
         Perfil
+      </a>
+      <a
+        className={styles.drawerItem}
+        onClick={() => alert('Logged out')}
+      >
+        <BiLogOut size={25} color="gray" />
+        Sair
       </a>
     </aside>
   )

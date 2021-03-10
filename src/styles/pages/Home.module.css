@@ -9,6 +9,7 @@
   height: 60px;
   display: flex;
   align-items: center;
+  transition: background 0.3s;
 }
 
 .menuButton {
@@ -20,7 +21,13 @@
   opacity: 0.7;
 }
 
+.gitHubButton {
+  margin-left: auto;
+  padding: 9px;
+}
+
 .main {
   height: 100%;
   width: 100vw;
+  transition: background 0.3s;
 }
