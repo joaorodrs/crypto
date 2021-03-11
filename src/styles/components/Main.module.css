@@ -2,11 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
+  height: calc(100vh - 65px);
   padding: 15px 20px;
+  overflow-y: scroll;
 }
 
-.pinnedCoins {
+.pinnedCoins, .coinsList {
   background: #657bf936;
   width: 100%;
   border-radius: 10px;
@@ -16,21 +17,21 @@
   padding: 20px;
 }
 
-.pinnedCoins span {
+.pinnedCoins span, .coinsList span {
   display: flex;
   width: 100%;
   justify-content: space-between;
   margin: 0 10px 10px 10px;
 }
 
-.pinnedCoins span p {
+.pinnedCoins span p, .coinsList span p {
   font-weight: bold;
   color: #657bf9;
   font-size: 18px;
   letter-spacing: 1px;
 }
 
-.pinnedContainer {
+.pinnedContainer, .coinContainer {
   background: white;
   display: flex;
   flex-direction: column;
@@ -40,22 +41,28 @@
   padding: 10px;
 }
 
-.pinnedContainer:not(:nth-of-type(1)) {
+.pinnedContainer:not(:nth-of-type(1)), .coinContainer:not(:nth-of-type(1)) {
   margin-top: 10px;
 }
 
-.pinnedValue {
+.pinnedValue, .coinValue {
   display: flex;
   margin-top: 20px;
   align-items: center;
 }
 
-.pinnedValue h3:nth-of-type(1) {
+.pinnedValue h3:nth-of-type(1), .coinValue h3:nth-of-type(1) {
   font-size: 23px;
   font-weight: 400;
 }
 
-.pinnedValue h3:last-child {
+.pinnedValue h3:last-child, .coinValue h3:last-child {
   margin-left: 10px;
   color: red;
+}
+
+.coinsList {
+  background: transparent;
+  margin-top: 20px;
+  border: 1px solid #ddd;
 }
