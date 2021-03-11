@@ -1,8 +1,6 @@
 import firebase from 'firebase/app'
 import styles from '../styles/pages/SignIn.module.css'
 
-import { useAuthState } from 'react-firebase-hooks/auth'
-
 import { FcGoogle } from 'react-icons/fc'
 import { SiFacebook } from 'react-icons/si'
 
