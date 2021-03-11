@@ -102,11 +102,16 @@ export const Home = ({ auth }: HomeProps) => {
         onClick={() => setShowDrawer(false)}
         className={styles.main}
         style={{
-          background: showDrawer ? '#ddd' : 'white'
+          background: showDrawer ? '#eee' : 'white',
         }}
       >
-        {activeComponent === 'Início' && <Main />}
-        {activeComponent === 'Perfil' && <Profile userInfo={auth.currentUser} />}
+        <div style={{
+          opacity: showDrawer ? 0.2 : 1,
+          transition: '.3s ease'
+        }}>
+          {activeComponent === 'Início' && <Main />}
+          {activeComponent === 'Perfil' && <Profile userInfo={auth.currentUser} />}
+        </div>
       </main>
     </div>
   )
