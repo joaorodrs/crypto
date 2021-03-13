@@ -36,7 +36,7 @@ export const Home = ({ auth }: HomeProps) => {
       <header
         className={styles.header}
         style={{
-          background: showDrawer ? '#657bf936' : 'white'
+          background: showDrawer ? '#00c9f615' : 'white'
         }}
       >
         <button
@@ -57,12 +57,12 @@ export const Home = ({ auth }: HomeProps) => {
             className={styles.drawerItem}
             onClick={() => toggleComponent('Início')}
             style={{
-              background: activeComponent === 'Início' ? "#657bf936" : 'white'
+              background: activeComponent === 'Início' ? "#00c9f615" : 'white'
             }}
           >
             <BiBitcoin
               size={25}
-              color={activeComponent === 'Início' ? "#657bf9" : 'gray'}
+              color={activeComponent === 'Início' ? "#FF5043" : 'gray'}
             />
             <h3>Início</h3>
           </button>
@@ -70,12 +70,12 @@ export const Home = ({ auth }: HomeProps) => {
             className={styles.drawerItem}
             onClick={() => toggleComponent('Perfil')}
             style={{
-              background: activeComponent === 'Perfil' ? "#657bf936" : 'white'
+              background: activeComponent === 'Perfil' ? "#00c9f615" : 'white'
             }}
           >
             <BiUser
               size={25}
-              color={activeComponent === 'Perfil' ? "#657bf9" : 'gray'}
+              color={activeComponent === 'Perfil' ? "#FF5043" : 'gray'}
             />
             <h3>Perfil</h3>
           </button>
@@ -94,7 +94,7 @@ export const Home = ({ auth }: HomeProps) => {
         >
           <AiFillGithub
             size={35}
-            color={showDrawer ? '#657bf9' : 'black'}
+            color={showDrawer ? '#FF5043' : 'black'}
           />
         </a>
       </header>
