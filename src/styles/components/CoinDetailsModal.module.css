@@ -1,6 +1,8 @@
 .modalContainer {
   margin: 25px;
-  width: 75vw;
+  width: 80%;
+  max-width: 575px;
+  align-self: center;
 }
 
 .modalContainer header {
@@ -9,19 +11,39 @@
   justify-content: space-between;
 }
 
-.modalContainer header button {
-  margin-right: 20px;
-}
+.modalContainer header button {}
 
 .coinInfo {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .coinInfo h3 {
   font-size: 20px;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.chartContainer {
+  height: 200px;
+  background: orange;
+}
+
+.pinCoinButton {
+  background: #00c9f615;
+  width: 100%;
+  margin-top: 15px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--primary-color)
+}
+
+.pinCoinButton svg {
+  margin-right: 10px;
 }

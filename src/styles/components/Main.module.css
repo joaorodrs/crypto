@@ -16,7 +16,7 @@
 }
 
 .pinnedCoins, .coinsList {
-  background: #00c9f615;
+  background: var(--primary-color-opaque);
   width: 100%;
   border-radius: 10px;
   display: flex;
@@ -34,7 +34,7 @@
 
 .pinnedCoins span p, .coinsList span p {
   font-weight: bold;
-  color: #00c9f6;
+  color: var(--primary-color);
   font-size: 18px;
   letter-spacing: 1px;
 }

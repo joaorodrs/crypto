@@ -1,16 +1,19 @@
 import Dialog from '@material-ui/core/Dialog'
 import { BiX } from 'react-icons/bi'
+import { RiPushpinFill } from 'react-icons/ri'
 import styles from '../styles/components/CoinDetailsModal.module.css'
 
 interface CoinDetailsProps {
   onClose(): void,
   open: boolean,
-  coin: Coin | undefined
+  coin: Coin | undefined,
+  onPin(): void,
+  onUnpin(): void
 }
 
-export const CoinDetailsModal = ({ onClose, open, coin }: CoinDetailsProps) => {
+export const CoinDetailsModal = ({ onClose, open, coin, onPin, onUnpin }: CoinDetailsProps) => {
   return (
-    <Dialog onClose={onClose} open={open}>
+    <Dialog onClose={onClose} open={open} fullWidth maxWidth="xs">
       <div className={styles.modalContainer}>
         <header>
           <span>
@@ -38,6 +41,24 @@ export const CoinDetailsModal = ({ onClose, open, coin }: CoinDetailsProps) => {
             <h3 style={{ color: 'green' }}>7d: +{String(Number(coin?.percent_change_7d).toFixed(2))}%</h3>
           )}
         </div>
+        <div className={styles.chartContainer}></div>
+        {coin?.pinned ? (
+          <button
+          className={styles.pinCoinButton}
+          onClick={onUnpin}
+        >
+          <RiPushpinFill size={20} color="var(--primary-color)" />
+          Desfixar
+        </button>
+        ) : (
+          <button
+            className={styles.pinCoinButton}
+            onClick={onPin}
+          >
+            <RiPushpinFill size={20} color="var(--primary-color)" />
+            Fixar
+          </button>
+        )}
       </div>
     </Dialog>
   )

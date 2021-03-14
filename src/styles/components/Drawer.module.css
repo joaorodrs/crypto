@@ -12,7 +12,7 @@
 .logoWrapper {
   display: flex;
   height: 56px;
-  background: #00c9f615;
+  background: var(--primary-color-opaque);
 }
 
 .logoWrapper img {

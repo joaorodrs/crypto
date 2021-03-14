@@ -26,3 +26,10 @@ button, input {
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --primary-color: #00c9f6;
+  --primary-color-opaque: #00c9f615;
+  --secondary-color: #ff5043;
+  --secondary-color-opaque: #ff504315;
+}

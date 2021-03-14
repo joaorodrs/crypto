@@ -16,8 +16,6 @@ function App() {
   const [user] = useAuthState(auth)
   const [loading, setLoading] = useState(true)
 
-  console.log(user?.email)
-
   useEffect(() => {
     if (user !== undefined) setLoading(false)
   }, [user])

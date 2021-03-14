@@ -33,6 +33,38 @@ export const Main = () => {
     }
   }
 
+  function handlePin(action: 'PIN' | 'UNPIN') {
+    const coinToPinOrUnpin = coinDetails
+    const pinnedCoins = localStorage.getItem('pinnedCoins')
+
+    if (action === 'PIN') {
+      if (pinnedCoins === null) {
+        localStorage.setItem('pinnedCoins', JSON.stringify([coinToPinOrUnpin]))
+      } else {
+        const parsedPinnedCoins  = JSON.parse(pinnedCoins)
+
+        localStorage.setItem('pinnedCoins', JSON.stringify([...parsedPinnedCoins, coinToPinOrUnpin]))
+      }
+    } else {
+      const parsedPinnedCoins: Coin[]  = JSON.parse(String(pinnedCoins))
+
+      delete coinToPinOrUnpin?.pinned
+
+      const updatedPinnedCoins = parsedPinnedCoins.filter(coin => {
+        return coin.id !== coinToPinOrUnpin?.id
+      })
+
+      console.log(coinToPinOrUnpin)
+
+      console.log(updatedPinnedCoins)
+
+      localStorage.setItem('pinnedCoins', JSON.stringify(updatedPinnedCoins))
+    }
+
+    setOpen(false)
+    loadPinnedCoins()
+  }
+
   async function loadPinnedCoins() {
     const pinnedCoins = localStorage.getItem('pinnedCoins')
 
@@ -59,7 +91,7 @@ export const Main = () => {
         <div className={styles.loadingWrapper}>
           <Loader
             type="Audio"
-            color="#ff5043"
+            color="var(--secondary-color)"
             height={70}
             width={70}
           />
@@ -69,12 +101,19 @@ export const Main = () => {
           <section className={styles.pinnedCoins}>
             <span>
               <p>Fixados</p>
-              <RiPushpinFill size={20} color="#00c9f6" />
+              <RiPushpinFill size={20} color="var(--primary-color)" />
             </span>
             {pinnedCoins === null || pinnedCoins?.length === 0 ?
               <p>Sem itens fixados no momento ¯\_(ツ)_/¯</p> : 
               pinnedCoins?.map(pinnedCoin => (
-                <li key={pinnedCoin.id} className={styles.coinContainer}>
+                <li
+                  key={pinnedCoin.id} 
+                  className={styles.coinContainer}
+                  onClick={() => {
+                    setCoinDetails({...pinnedCoin, pinned: true})
+                    setOpen(true)
+                  }}
+                >
                   <h2>{pinnedCoin.symbol}</h2>
                   <p>{pinnedCoin.name}</p>
                   <div className={styles.coinValue}>
@@ -92,7 +131,7 @@ export const Main = () => {
           <section className={styles.coinsList}>
             <span>
               <p>Principais de hoje</p>
-              <RiSunFill size={20} color="#00c9f6" />
+              <RiSunFill size={20} color="var(--primary-color)" />
             </span>
             {coins.map(coin => (
               <li
@@ -116,7 +155,13 @@ export const Main = () => {
               </li>
             ))}
           </section>
-          <CoinDetailsModal onClose={handleClose} open={open} coin={coinDetails} />
+          <CoinDetailsModal
+            onClose={handleClose}
+            open={open}
+            coin={coinDetails}
+            onPin={() => handlePin('PIN')}
+            onUnpin={() => handlePin('UNPIN')}
+          />
         </>
       )}
     </div>

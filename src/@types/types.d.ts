@@ -14,5 +14,7 @@ interface Coin {
   volume24a: number,
   csupply: string,
   tsupply: string,
-  msupply: string
+  msupply: string,
+
+  pinned?: boolean // this property is not from API
 }
