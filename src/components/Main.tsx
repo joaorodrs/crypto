@@ -56,12 +56,14 @@ export const Main = () => {
   return (
     <div className={styles.mainContainer}>
       {loading ? (
-        <Loader
-          type="Audio"
-          color="#ff5043"
-          height={70}
-          width={70}
-        />
+        <div className={styles.loadingWrapper}>
+          <Loader
+            type="Audio"
+            color="#ff5043"
+            height={70}
+            width={70}
+          />
+        </div>
       ) : (
         <>
           <section className={styles.pinnedCoins}>

@@ -21,10 +21,22 @@ export const CoinDetailsModal = ({ onClose, open, coin }: CoinDetailsProps) => {
             <BiX size={30} />
           </button>
         </header>
-        <div>
-          <h3>1h: {coin?.percent_change_1h}%</h3>
-          <h3>24h: {coin?.percent_change_24h}%</h3>
-          <h3>7d: {coin?.percent_change_7d}%</h3>
+        <div className={styles.coinInfo}>
+          {Math.sign(Number(coin?.percent_change_1h)) === -1 ? (
+            <h3 style={{ color: 'red' }}>1h: {coin?.percent_change_1h}%</h3>
+          ) : (
+            <h3 style={{ color: 'green' }}>1h: +{String(Number(coin?.percent_change_1h).toFixed(2))}%</h3>
+          )}
+          {Math.sign(Number(coin?.percent_change_24h)) === -1 ? (
+            <h3 style={{ color: 'red' }}>24h: {coin?.percent_change_24h}%</h3>
+          ) : (
+            <h3 style={{ color: 'green' }}>24h: +{String(Number(coin?.percent_change_24h).toFixed(2))}%</h3>
+          )}
+          {Math.sign(Number(coin?.percent_change_7d)) === -1 ? (
+            <h3 style={{ color: 'red' }}>7d: {coin?.percent_change_7d}%</h3>
+          ) : (
+            <h3 style={{ color: 'green' }}>7d: +{String(Number(coin?.percent_change_7d).toFixed(2))}%</h3>
+          )}
         </div>
       </div>
     </Dialog>
