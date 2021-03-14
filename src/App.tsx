@@ -1,6 +1,8 @@
 import 'firebase/auth'
+
 import 'react-toastify/dist/ReactToastify.css'
 import './styles/global.css'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 import { Home } from './pages/Home'
 import { SignIn } from './pages/SignIn'
