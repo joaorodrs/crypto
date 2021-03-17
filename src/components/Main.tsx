@@ -54,10 +54,6 @@ export const Main = () => {
         return coin.id !== coinToPinOrUnpin?.id
       })
 
-      console.log(coinToPinOrUnpin)
-
-      console.log(updatedPinnedCoins)
-
       localStorage.setItem('pinnedCoins', JSON.stringify(updatedPinnedCoins))
     }
 

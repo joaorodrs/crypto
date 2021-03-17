@@ -11,7 +11,13 @@ interface CoinDetailsProps {
   onUnpin(): void
 }
 
-export const CoinDetailsModal = ({ onClose, open, coin, onPin, onUnpin }: CoinDetailsProps) => {
+export const CoinDetailsModal = ({
+  onClose,
+  open,
+  coin,
+  onPin,
+  onUnpin
+}: CoinDetailsProps) => {
   return (
     <Dialog onClose={onClose} open={open} fullWidth maxWidth="xs">
       <div className={styles.modalContainer}>
@@ -41,7 +47,6 @@ export const CoinDetailsModal = ({ onClose, open, coin, onPin, onUnpin }: CoinDe
             <h3 style={{ color: 'green' }}>7d: +{String(Number(coin?.percent_change_7d).toFixed(2))}%</h3>
           )}
         </div>
-        <div className={styles.chartContainer}></div>
         {coin?.pinned ? (
           <button
           className={styles.pinCoinButton}
