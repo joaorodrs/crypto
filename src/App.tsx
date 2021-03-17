@@ -37,7 +37,7 @@ function App() {
             width={70}
           />
         </div>
-      ) : user === undefined ? <SignIn auth={auth} /> : <Home auth={auth} />}
+      ) : user === null || undefined ? <SignIn auth={auth} /> : <Home auth={auth} />}
       <ToastContainer />
     </>
   )
