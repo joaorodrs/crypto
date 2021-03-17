@@ -52,6 +52,8 @@
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
   padding: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
 }
 
 .pinnedContainer:not(:nth-of-type(1)), .coinContainer:not(:nth-of-type(1)) {
@@ -90,5 +92,9 @@
   .mainContainer::-webkit-scrollbar-thumb {
     background: var(--secondary-color);
     border-radius: 10px;
+  }
+
+  .pinnedContainer:hover, .coinContainer:hover {
+    box-shadow: none;
   }
 }

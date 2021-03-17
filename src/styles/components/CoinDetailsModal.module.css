@@ -11,8 +11,6 @@
   justify-content: space-between;
 }
 
-.modalContainer header button {}
-
 .coinInfo {
   margin-top: 20px;
   display: flex;
@@ -46,4 +44,24 @@
 
 .pinCoinButton svg {
   margin-right: 10px;
+}
+
+@media (min-width: 800px) {
+  .modalContainer header button {
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+
+  .modalContainer header button:hover {
+    opacity: 0.7;
+  }
+
+  .pinCoinButton {
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+
+  .pinCoinButton:hover {
+    opacity: 0.7;
+  }
 }
