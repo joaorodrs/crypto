@@ -2,8 +2,10 @@
 
 <p align="center">
   <img src="./src/assets/crypto.png" height="100" />
+  <img src="./docs/crypto-desktop.gif" />
 </p>
 
+---
 ## 📌 Index
 - [About](#about)
 - [What's inside the box](#whats-inside-the-box)
@@ -24,4 +26,15 @@ This project has the functionality to list some coins in the market, in Crypto y
 
 <h1 id="how-to-play">🎮 How to play</h1>
 
-<p align="center">[...] work in progress [...]</p>
+- Clone the repo with the following command:
+
+```
+  git clone https://github.com/joaorodrs/crypto
+```
+- And then you can install all the dependencies with `yarn` or `npm i`
+- And now you can run the project in development with `yarn start` or `npm start`
+
+<h1 align="center">👀 To implement</h1>
+
+- [ ] Login with email and password
+- [ ] Save all the fixes in a database
